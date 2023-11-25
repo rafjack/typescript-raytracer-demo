@@ -4,7 +4,6 @@
   "description": "A boilerplate for using TypeScript with Parcel and Jest",
   "scripts": {
     "test": "jest",
-    "testandwatch": "jest --watch",
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
@@ -20,5 +19,8 @@
     "parcel": "^2.8.3",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@rafjack/typescript-raytracer": "^1.0.1"
   }
 }

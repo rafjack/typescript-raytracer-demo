@@ -146,3 +146,5 @@ dist
 
 # sonar lint
 .idea/sonarlint/issuestore
+
+.npmrc
