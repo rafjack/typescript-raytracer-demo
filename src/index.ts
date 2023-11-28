@@ -142,11 +142,15 @@ export class RaycasterCanvasComponent {
         const middleSphere: Sphere = RayCasterBuilder.createSphere();
         middleSphere.setTransform(RayCasterBuilder.getTranslationMatrix(-0.5, 1, 0.5));
         const middleSphereMaterial: Material = middleSphere.getMaterial();
-        middleSphereMaterial.setDiffuse(0.7);
-        middleSphereMaterial.setSpecular(0.3);
-        middleSphereMaterial.setReflective(0.4);
-        middleSphereMaterial.pattern = RayCasterBuilder.buildStripePattern(WHITE, BLACK);
+        middleSphereMaterial.setDiffuse(0.0);
+        middleSphereMaterial.setSpecular(1.0);
+        middleSphereMaterial.setShininess(300);
+        middleSphereMaterial.setReflective(4);
+        middleSphereMaterial.setTransparency(0.9);
+        middleSphereMaterial.setRefractiveIndex(100);
+        //middleSphereMaterial.pattern = RayCasterBuilder.buildStripePattern(WHITE, BLACK);
         middleSphere.setMaterial(middleSphereMaterial);
+
 
         const rightSphere: Sphere = RayCasterBuilder.createSphere();
         rightSphere.setTransform(
@@ -161,6 +165,8 @@ export class RaycasterCanvasComponent {
         rightSphereMaterial.setDiffuse(0.7);
         rightSphereMaterial.setSpecular(0.3);
         rightSphereMaterial.setReflective(0.4);
+        rightSphereMaterial.setReflective(0.4);
+        rightSphereMaterial.setTransparency(0.7);
         rightSphereMaterial.pattern = rightSpherePattern;
         rightSphere.setMaterial(rightSphereMaterial);
 
