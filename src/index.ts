@@ -185,15 +185,19 @@ export class RaycasterCanvasComponent {
         leftSphereMaterial.pattern.setTransform(RayCasterBuilder.getScalingMatrix(0.5, 0.5, 0.5));
         leftSphere.setMaterial(leftSphereMaterial);
 
+        const group = RayCasterBuilder.createGroup();
+        group.addChild(middleSphere);
+        group.addChild(rightSphere);
+        group.addChild(leftSphere);
+        group.setTransform(RayCasterBuilder.getScalingMatrix(0.9, 0.9, 0.9));
+
+
         const world: World = RayCasterBuilder.createDefaultWorld();
 
         const lightSource: Light = RayCasterBuilder.createPointLight(new Point(-10, 10, -10), new Color(1, 1, 1));
 
         world.setLightSource(lightSource);
-        world.setShapes([plane, leftSphere, middleSphere, rightSphere]);
-
-        // only add the plane and middleSphere to the world
-        // world.setShapes([plane, middleSphere]);
+        world.setShapes([plane, group]);
 
         const camera: Camera = RayCasterBuilder.createCamera(this.size, this.size, Math.PI / 3);
 

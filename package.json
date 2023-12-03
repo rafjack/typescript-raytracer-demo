@@ -20,6 +20,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@rafjack/typescript-raytracer": "^1.0.3"
+    "@rafjack/typescript-raytracer": "^1.0.8"
   }
 }
